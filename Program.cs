@@ -39,12 +39,12 @@ namespace GeekyGift
 
         async static Task Main(string[] args)
         {
-            var printerName = args[0];
-            if (string.IsNullOrEmpty(printerName))
+            if (args == null || string.IsNullOrEmpty(args[0]))
             {
                 Console.WriteLine("Printer name was not set. Exiting.");
                 return;
             }
+            var printerName = args[0];
             Console.WriteLine($"Printer: {printerName}");
 
             Console.WriteLine("Public key:");
